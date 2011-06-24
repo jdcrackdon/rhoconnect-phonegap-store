@@ -83,14 +83,75 @@
 						</a>
 					</li>
 					<li class='ui-block-b'>
-						<a id='sync' class='ui-state-persist ui-btn' href='#' data-theme='a'>
+						<a id='sync' class='ui-state-persist ui-btn sync' href='#' data-theme='a'>
 							<span class='ui-btn-inner' style='border:0'>
 								<span class='ui-btn-text'>sync</span>
 							</span>
 						</a>
 					</li>
 					<li class='ui-block-b'>
-						<a id='logout' class='ui-state-persist ui-btn' href='#' data-theme='a'>
+						<a id='logout' class='ui-state-persist ui-btn logout' href='#' data-theme='a'>
+							<span class='ui-btn-inner' style='border:0'>
+								<span class='ui-btn-text'>logout</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!--  end page -->
+<!-- start of page 4 -->
+	<div data-role="page" id="details">
+	    <div data-role="header">
+	        <div class='greeting'>
+
+	        </div>
+	    </div>
+	    <div data-role="content">
+            <form data-ajax="false">
+                <div data-role="fieldcontain">
+                    <label for="brand">Brand:</label>
+                    <input type="text" name="brand" id="brand" value="" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" value="" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="price">Price:</label>
+                    <input type="text" name="price" id="price" value="" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" name="quantity" id="quantity" value="" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="sku">SKU:</label>
+                    <input type="text" name="sku" id="sku" value="" />
+                </div>
+                <input type="button" name="save" id="save" value="Save"/>
+            </form>
+		</div>
+    	<div data-role="footer" class="ui-footer ui-footer-fixed fade ui-fixed-overlay" data-position='fixed' role='contentinfo' data-them='a'>
+			<div data-role='navbar' role='navigation'>
+				<ul class='ui-grid-b'>
+					<li class='ui-block-a'>
+						<a class='ui-state-persist ui-btn' href='#home' data-theme='a'>
+							<span class='ui-btn-inner' style='border:0'>
+								<span class='ui-btn-text'>Home</span>
+							</span>
+						</a>
+					</li>
+					<li class='ui-block-b'>
+						<a class='ui-state-persist ui-btn sync' href='#' data-theme='a'>
+							<span class='ui-btn-inner' style='border:0'>
+								<span class='ui-btn-text'>sync</span>
+							</span>
+						</a>
+					</li>
+					<li class='ui-block-b'>
+						<a class='ui-state-persist ui-btn logout' href='#' data-theme='a'>
 							<span class='ui-btn-inner' style='border:0'>
 								<span class='ui-btn-text'>logout</span>
 							</span>

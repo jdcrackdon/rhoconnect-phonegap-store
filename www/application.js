@@ -29,15 +29,15 @@ onLoad = (function($) {
 				$('.login-error').replaceWith("<div class='login-error'>Error logging in" + errCode + "</div>");
 				$('.login-error').fadeOut(3000);
 			})
-		})
+		});
 		
 		$('a#products').live('tap',function(event){
 			pull_data('Product');
-		})
-		$('a#sync').live('tap',function(event){
+		});
+		$('a.ui-btn.sync').live('tap',function(event){
 			sync();
-		})
-		$('a#logout').live('tap',function(event){
+		});
+		$('a.ui-btn.logout').live('tap',function(event){
 			logout();
 		})
     }
@@ -93,17 +93,24 @@ onLoad = (function($) {
                 append_object(obj);
             });
 			$.mobile.changePage("list", "slideright");
-			//$('ul').listview('refresh');
+			$('ul').listview('refresh');
 		}
 	}
+
+    function load_details(obj) {
+        $("input[type='text'][name='brand']").attr("value", obj.brand).input("refresh");
+    }
 	
 	function append_object(obj){
 		
 		var objElm = $('<li></li>');
         //objElm.append($('<span>' + obj.brand + ' ' + obj.name +'</span>'));
-		objElm.append($("<a href='#'>" + obj.brand + ' ' + obj.name + "</a>"));
-		
+		objElm.append($("<a id='prod_" +obj.id +"' class='product' href='#details'>" + obj.brand + ' ' + obj.name + "</a>"));
         $('#theList').append(objElm);
+
+        objElm.children('a#prod_' +obj.id).live('tap',function(event){
+                    load_details(obj);
+        });
     }
 
     function fields_list(obj){
