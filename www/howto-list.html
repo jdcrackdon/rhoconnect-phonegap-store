@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RhoConnect Store load howto</title>
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+            html { height: 100%; }
+            body { height: 100%; margin: 0; padding: 0; }
+        </style>
+
+        <script type="text/javascript" charset="utf-8" src="external/jquery/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="external/jquery/jquery.base64.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="external/jquery/json.js"></script>	
+
+        <link rel="stylesheet" href="external/jqmobile/jquery.mobile-1.0b1pre.min.css">
+        <script type="text/javascript" charset="utf-8" src="external/jqmobile/jquery.mobile-1.0b1pre.min.js"></script>
+
+        <script type="text/javascript">
+            var syncUrl = 'http://localhost:9292/application';
+            RhoConfig = {
+                appName: 'SimpleStore',
+                syncServer: syncUrl,
+                logLevel: 'trace'
+            }; 
+        </script>
+
+        <script src="external/persistencejs/persistence.js" type="application/javascript"></script>
+		<script src="external/persistencejs/persistence.store.sql.js" type="application/javascript"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="js/rhoconnect-0_9.js"></script>
+        <script type="text/javascript" language="javascript" src="howto-list.js"></script>
+
+	</head>
+	<body onload="onLoad()">
+    <div data-role="page" id="form">
+        <div data-role="header">
+            <h1>List</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" id="theList">
+<!--
+                <li><a href="acura.html">Acura</a></li>
+                <li><a href="audi.html">Audi</a></li>
+                <li><a href="bmw.html">BMW</a></li>
+-->
+            </ul>
+        </div>
+    </div>
+    </body>
+</html>
