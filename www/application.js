@@ -2,8 +2,6 @@ var username = null;
 var password = null;
 
 onLoad = (function($) {
-
-    var fields = [ 'name','brand','price','quantity','sku' ]
 	
     var modelDefinitions = [
 	   {
@@ -36,7 +34,6 @@ onLoad = (function($) {
 		$('a#products').live('tap',function(event){
 			pull_data('Product');
 		})
-		$('a#'
 		$('a#sync').live('tap',function(event){
 			sync();
 		})
@@ -91,25 +88,22 @@ onLoad = (function($) {
         });
 		
 	    function storeLoaded() {
-			var html = $("<div id='list-data'>");
+			$('#theList').empty();
 			mod.all().each(null /*means no transaction*/, function(obj){
-                append_object(obj,html);
+                append_object(obj);
             });
-			html.append($("</div>"));
-			$('#list-data').replaceWith(html);
-			$.mobile.changePage("list", "slideup");
+			$.mobile.changePage("list", "slideright");
+			//$('ul').listview('refresh');
 		}
 	}
 	
-	function append_object(obj,html){
+	function append_object(obj){
 		
-		var objElm = $("<a id='products' href='#' data-role='button' data-icon='arrow-r'>" + obj.name + "</a>")
-        //var objElm = $("<div class='ui-grid-b'><div class='ui-bar ui-bar-b' style='height:50px;text-align:center'>"+ obj.name + "</div></div>");
-
-        //objElm.append($('<span>' +obj.brand +' ' +obj.name +'</span>'));
-        //objElm.append(fields_list(obj));
-
-        html.append(objElm);
+		var objElm = $('<li></li>');
+        //objElm.append($('<span>' + obj.brand + ' ' + obj.name +'</span>'));
+		objElm.append($("<a href='#'>" + obj.brand + ' ' + obj.name + "</a>"));
+		
+        $('#theList').append(objElm);
     }
 
     function fields_list(obj){
