@@ -63,6 +63,16 @@ onLoad = (function($) {
             });
 		}
 	}
+	
+	function append_object(obj){
+
+        var objElm = $('<li></li>');
+        objElm.append($('<span>' +obj.brand +' ' +obj.name +'</span>'));
+        objElm.append(fields_list(obj));
+
+        $('#theList').append(objElm);
+        $('ul').listview('refresh');
+    }
 
     function fields_list(obj){
         var fieldsElm = $('<ul data-role="listview"></ul>');
@@ -74,16 +84,6 @@ onLoad = (function($) {
                 '<li>SKU: ' +obj.sku +'</li>'
                 );
         return fieldsElm;
-    }
-
-    function append_object(obj){
-
-        var objElm = $('<li></li>');
-        objElm.append($('<span>' +obj.brand +' ' +obj.name +'</span>'));
-        objElm.append(fields_list(obj));
-
-        $('#theList').append(objElm);
-        $('ul').listview('refresh');
     }
 
     return loadPages;

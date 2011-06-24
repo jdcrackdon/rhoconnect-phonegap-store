@@ -15,11 +15,11 @@ onLoad = (function($) {
     ];
 
     function loadPages() {
-            loginRhoConnect('username', 'password').done(function(){
-				sync();
-            }).fail(function(errCode){
-                alert("can't login to server: " +errCode);
-			})
+	          loginRhoConnect('username', 'password').done(function(){
+			sync();
+	          }).fail(function(errCode){
+	              alert("can't login to server: " +errCode);
+		})
     }
 	
 
