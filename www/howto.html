@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RhoConnect Store load howto</title>
+
+        <script type="text/javascript" charset="utf-8" src="external/jquery/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="external/jquery/jquery.base64.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="external/jquery/json.js"></script>	
+
+        <script type="text/javascript">
+            var syncUrl = 'http://localhost:9292/application';
+            RhoConfig = {
+                appName: 'SimpleStore',
+                syncServer: syncUrl,
+                logLevel: 'trace'
+            }; 
+        </script>
+
+        <script src="external/persistencejs/persistence.js" type="application/javascript"></script>
+		<script src="external/persistencejs/persistence.store.sql.js" type="application/javascript"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="js/rhoconnect-0_9.js"></script>
+        <script type="text/javascript" language="javascript" src="howto.js"></script>
+
+	</head>
+	<body onload="onLoad()">
+	</body>
+</html>
